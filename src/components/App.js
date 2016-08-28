@@ -1,11 +1,13 @@
 import React from 'react';
 import Form from './Form';
+import Letter from './Letter';
 
 const App = props => {
   return (
     <div className="row">
-      <div className="small-12 columns">
-        <Form />
+      <div>
+        <Form
+        />
       </div>
     </div>
   )

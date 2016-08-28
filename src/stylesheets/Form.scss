@@ -1,0 +1,11 @@
+button {
+  float: right;
+  margin: 5px 0px 5px 0px;
+  border: 2px solid black;
+  padding: 5px;
+  box-shadow: 2px 2px 2px black;
+}
+
+button:hover, button:active {
+  background-color: #CCCCCC;
+}

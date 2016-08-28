@@ -10,26 +10,32 @@ class Form extends React.Component {
     };
 
     this.handleAccepted = this.handleAccepted.bind(this);
+    this.handleRejected = this.handleRejected.bind(this);
   }
 
   handleAccepted(event) {
-    if(this.state.accepted) {
-      this.setState({accepted: false})
-    } else {
-      this.setState({accepted: true})
-    }
+    this.setState({accepted: true})
+  }
+
+  handleRejected(event) {
+    this.setState({accepted: false})
   }
 
   render() {
     return(
-      <div className = "row">
-        <div className = "small-12 columns">
-          <button onClick={this.handleAccepted}>Accepted</button>
-          <button onClick={this.handleAccepted}>Rejected</button>
-          {this.state.accepted}
-          <Letter
-            stateBoolean = {this.state.accepted}
-          />
+      <div className = "form">
+        <div className = "row">
+          <div className = "small-8 columns">
+            <button onClick={this.handleAccepted}>Accepted</button>
+            <button onClick={this.handleRejected}>Rejected</button>
+          </div>
+        </div>
+        <div className = "row">
+          <div className= "small-8 columns">
+            <Letter
+              stateBoolean = {this.state.accepted}
+            />
+          </div>
         </div>
       </div>
     );
