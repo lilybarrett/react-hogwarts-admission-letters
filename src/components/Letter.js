@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Letter = props => {
-  let stateBoolean = props.accepted;
+  let { accepted, assignedAdressee } = props
 
-  if (props.stateBoolean) {
+  if (accepted) {
     return (
       <div className="letter">
         <div className="row">
@@ -25,7 +25,7 @@ const Letter = props => {
         </div>
         <div className="row">
           <div className="small-12 left columns">
-            <p>Dear Adressee,</p>
+            <p>Dear {props.assignedAdressee},</p>
             <p>We are pleased to inform you that you have a place at Hogwarts School of
     Witchcraft and Wizardry. Please find enclosed a list of all necessary books and
     equipment.</p>
@@ -59,7 +59,7 @@ const Letter = props => {
         </div>
         <div className="row">
           <div className="small-12 left columns">
-            <p>Dear Adressee,</p>
+            <p>Dear {assignedAdressee},</p>
             <p>We regret to inform you that we are unable to offer you a place at Hogwarts
 School of Witchcraft and Wizardry. After reviewing your application and Github profile, we recognize that you are indeed a "coding wizard". Unfortunately, we have concluded that you do not have actual magical
 abilities, which you must have to be admitted into Hogwarts.</p>
