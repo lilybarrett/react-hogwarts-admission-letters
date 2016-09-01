@@ -7,7 +7,7 @@ class Form extends React.Component {
     super(props);
     this.state = {
       accepted: true,
-      adressee: null
+      adressee: "Adressee"
     };
 
     this.handleAccepted = this.handleAccepted.bind(this);
@@ -24,11 +24,9 @@ class Form extends React.Component {
   }
 
   assignAdressee(event) {
-    if (event.target.value === null) {
-      debugger;
+    if (event.target.value === "") {
       this.setState({adressee: "Adressee"})
     } else {
-      debugger;
       this.setState({adressee: event.target.value})
     }
   }
@@ -48,7 +46,8 @@ class Form extends React.Component {
         <div className = "row">
           <div className= "small-8 columns">
             <Letter
-              stateBoolean = {this.state.accepted}
+              accepted={this.state.accepted}
+              assignedAdressee={this.state.adressee}
             />
           </div>
         </div>
@@ -56,5 +55,6 @@ class Form extends React.Component {
     );
   }
 };
+
 
 export default Form;

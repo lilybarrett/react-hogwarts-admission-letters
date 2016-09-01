@@ -1,10 +1,9 @@
 import React from 'react';
 
 const Letter = props => {
-  let stateBoolean = props.accepted;
-  let assignedAdressee = props.adressee;
+  let { accepted, assignedAdressee } = props
 
-  if (props.stateBoolean) {
+  if (accepted) {
     return (
       <div className="letter">
         <div className="row">
@@ -26,7 +25,7 @@ const Letter = props => {
         </div>
         <div className="row">
           <div className="small-12 left columns">
-            <p>Dear {assignedAdressee},</p>
+            <p>Dear {props.assignedAdressee},</p>
             <p>We are pleased to inform you that you have a place at Hogwarts School of
     Witchcraft and Wizardry. Please find enclosed a list of all necessary books and
     equipment.</p>
